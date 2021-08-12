@@ -1,11 +1,11 @@
 # Data Structures
 
-###install package
+### install package
 ```` 
 go get github.com/m-simeonov/go-data-structures
 ````
 
-##LIFO Stack (Last In First Out)
+## LIFO Stack (Last In First Out)
 
 Stack is a linear data structure which follows a particular order in which the operations are performed. The order is Last In First Out.
 
@@ -82,7 +82,7 @@ tail := list.GetTail()
 len := list.GetLength()
 ````
 
-####Example linked list
+#### Example linked list
 ```` 
 list := structures.NewLinkedList()
 list.Add(&structures.Node{Data: "one"})
