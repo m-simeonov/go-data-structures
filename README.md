@@ -52,7 +52,7 @@ A linked list is a linear data structure, in which the elements are not stored a
 list := structures.NewLinkedList()
 ````
 
-#### Add to linked list
+#### Add Value to linked list
 ````
 list.Add(&structures.Node{Data: "one"})
 ````
@@ -85,9 +85,9 @@ len := list.GetLength()
 #### Example linked list
 ```` 
 list := structures.NewLinkedList()
-list.Add(&structures.Node{Data: "one"})
-list.Add(&structures.Node{Data: "two"})
-list.Add(&structures.Node{Data: "three"})
+list.AddValue("one")
+list.AddValue("two")
+list.AddValue("three")
 
 data := list.ToSlice()
 fmt.Println(data) // will print [one two three]

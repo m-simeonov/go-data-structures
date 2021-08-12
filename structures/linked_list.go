@@ -1,7 +1,9 @@
 package structures
 
+import "fmt"
+
 type LinkedList interface {
-	Add(node *Node)
+	Add(value interface{})
 	ToSlice() []interface{}
 	Delete(node *Node) error
 	GetLength() int
@@ -24,7 +26,8 @@ func NewLinkedList() LinkedList {
 	return &linkedList{}
 }
 
-func (l *linkedList) Add(node *Node) {
+func (l *linkedList) Add(value interface{}) {
+	node := &Node{Data: value}
 	if l.head == nil {
 		l.head = node
 	} else {
@@ -67,6 +70,7 @@ func (l linkedList) ToSlice() []interface{} {
 		if node == nil {
 			break
 		}
+		fmt.Println(node.Data)
 		result[i] = node.Data
 		i++
 		node = node.Next

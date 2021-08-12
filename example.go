@@ -21,9 +21,9 @@ func RunExampleStack() {
 
 func RunExampleList() {
 	list := structures.NewLinkedList()
-	list.Add(&structures.Node{Data: "one"})
-	list.Add(&structures.Node{Data: "two"})
-	list.Add(&structures.Node{Data: "three"})
+	list.Add("one")
+	list.Add("two")
+	list.Add("three")
 
 	data := list.ToSlice()
 	fmt.Println(data) // will print [one two three]
