@@ -2,17 +2,17 @@ package structures
 
 import "errors"
 
-type Stack interface {
+type LifoStack interface {
 	Pop() (interface{}, error)
 	Push(element interface{})
-	Length() int
+	GetLength() int
 }
 
 type stack struct {
 	elements []interface{}
 }
 
-func NewStack() Stack {
+func NewLifoStack() LifoStack {
 	return &stack{
 		elements: make([]interface{}, 0, 0),
 	}
@@ -33,6 +33,6 @@ func (s *stack) Push(element interface{}) {
 	s.elements = append(s.elements, element)
 }
 
-func (s *stack) Length() int {
+func (s *stack) GetLength() int {
 	return len(s.elements)
 }
