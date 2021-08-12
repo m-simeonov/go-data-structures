@@ -1,5 +1,8 @@
 # Data Structures
 
+####install package
+<code>go get github.com/m-simeonov/go-data-structures </code>
+
 ##LIFO Stack (Last In First Out)
 
 Stack is a linear data structure which follows a particular order in which the operations are performed. The order is Last In First Out.
