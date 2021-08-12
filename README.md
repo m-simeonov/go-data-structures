@@ -1,23 +1,33 @@
 # Data Structures
 
-####install package
-<code>go get github.com/m-simeonov/go-data-structures </code>
+###install package
+```` 
+go get github.com/m-simeonov/go-data-structures
+````
 
 ##LIFO Stack (Last In First Out)
 
 Stack is a linear data structure which follows a particular order in which the operations are performed. The order is Last In First Out.
 
 #### Init Stack
-<code>stack := structures.NewStack()</code>
+````
+stack := structures.NewStack()
+````
 
 #### Push Element
-<code>stack.Push("one")</code>
+````
+stack.Push("one")
+````
 
 #### Pop Element
-<code>val := stack.Pop()</code>
+````
+val := stack.Pop()
+````
 
 #### Get Length
-<code>len := stack.GetLength()</code>
+````
+len := stack.GetLength()
+````
 
 #### Example LIFO Stack
 ```` 
@@ -38,25 +48,39 @@ if err == nil {
 A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations. A linked list consists of nodes where each node contains a data field and a reference(link) to the next node in the list
 
 #### Init linked list
-<code>list := structures.NewLinkedList()</code>
+````
+list := structures.NewLinkedList()
+````
 
 #### Add to linked list
-<code>list.Add(&structures.Node{Data: "one"})</code>
+````
+list.Add(&structures.Node{Data: "one"})
+````
 
 #### Delete node
-<code>list.Delete(head)</code>
+````
+list.Delete(head)
+````
 
 #### Convert linked list to slice
-<code>data := list.ToSlice()</code>
+````
+data := list.ToSlice()
+````
 
 #### Get Head
-<code>tail := list.GetHead()</code>
+````
+tail := list.GetHead()
+````
 
 #### Get Tail
-<code>tail := list.GetTail()</code>
+````
+tail := list.GetTail()
+````
 
 #### Get Length
-<code>len := list.GetLength()</code>
+````
+len := list.GetLength()
+````
 
 ####Example linked list
 ```` 
