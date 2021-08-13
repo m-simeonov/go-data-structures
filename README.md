@@ -11,7 +11,7 @@ Stack is a linear data structure which follows a particular order in which the o
 
 #### Init Stack
 ````
-stack := structures.NewStack()
+stack := stack.New()
 ````
 
 #### Push Element
@@ -31,16 +31,16 @@ len := stack.GetLength()
 
 #### Example LIFO Stack
 ```` 
-stack := structures.NewLifoStack()
-//Push Element to LifoStack
-stack.Push("one")
-stack.Push("two")
+lifoStack := stack.New()
+// Push Element to LifoStack
+lifoStack.Push("one")
+lifoStack.Push("two")
 
-fmt.Println(stack.GetLength()) //will print `2`
+fmt.Println(lifoStack.GetLength()) // will print `2`
 
-element, err := stack.Pop()
+element, err := lifoStack.Pop()
 if err == nil {
-    fmt.Println(element) //will print `two`
+    fmt.Println(element) // will print `two`
 }
 ```` 
 
@@ -49,56 +49,56 @@ A linked list is a linear data structure, in which the elements are not stored a
 
 #### Init linked list
 ````
-list := structures.NewLinkedList()
+linkedList := list.New()
 ````
 
 #### Add Value to linked list
 ````
-list.Add(&structures.Node{Data: "one"})
+linkedList.Add("one")
 ````
 
 #### Delete node
 ````
-list.Delete(head)
+linkedList.Delete(head)
 ````
 
 #### Convert linked list to slice
 ````
-data := list.ToSlice()
+data := linkedList.ToSlice()
 ````
 
 #### Get Head
 ````
-tail := list.GetHead()
+tail := linkedList.GetHead()
 ````
 
 #### Get Tail
 ````
-tail := list.GetTail()
+tail := linkedList.GetTail()
 ````
 
 #### Get Length
 ````
-len := list.GetLength()
+len := linkedList.GetLength()
 ````
 
 #### Example linked list
 ```` 
-list := structures.NewLinkedList()
-list.AddValue("one")
-list.AddValue("two")
-list.AddValue("three")
+linkedList := list.New()
+linkedList.Add("one")
+linkedList.Add("two")
+linkedList.Add("three")
 
-data := list.ToSlice()
+data := linkedList.ToSlice()
 fmt.Println(data) // will print [one two three]
 
-len := list.GetLength()
+len := linkedList.GetLength()
 fmt.Println(len) // will print 3
 
-head := list.GetHead()
+head := linkedList.GetHead()
 fmt.Println(head.Data) // will print `one`
-list.Delete(head)
+linkedList.Delete(head)
 
-data = list.ToSlice()
+data = linkedList.ToSlice()
 fmt.Println(data) // will print [two three]
 ````

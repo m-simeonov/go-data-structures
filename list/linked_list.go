@@ -1,9 +1,11 @@
-package structures
+package list
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type LinkedList interface {
-	Add(value interface{})
+	Add(value ...interface{})
 	ToSlice() []interface{}
 	Delete(node *Node) error
 	GetLength() int
@@ -22,20 +24,22 @@ type linkedList struct {
 	head   *Node
 }
 
-func NewLinkedList() LinkedList {
+func New() LinkedList {
 	return &linkedList{}
 }
 
-func (l *linkedList) Add(value interface{}) {
-	node := &Node{Data: value}
-	if l.head == nil {
-		l.head = node
-	} else {
-		l.tail.Next = node
-	}
+func (l *linkedList) Add(values ...interface{}) {
+	for _, value := range values {
+		node := &Node{Data: value}
+		if l.head == nil {
+			l.head = node
+		} else {
+			l.tail.Next = node
+		}
 
-	l.tail = node
-	l.length++
+		l.tail = node
+		l.length++
+	}
 }
 
 func (l *linkedList) Delete(nodeDel *Node) error {

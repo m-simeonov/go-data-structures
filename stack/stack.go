@@ -1,20 +1,24 @@
-package structures
+package stack
 
-import "errors"
+import (
+	"errors"
+	"sync"
+)
 
-type LifoStack interface {
+type Stack interface {
 	Pop() (interface{}, error)
-	Push(element interface{})
+	Push(elementList ...interface{})
 	GetLength() int
 }
 
 type stack struct {
 	elements []interface{}
+	lock     sync.RWMutex
 }
 
-func NewLifoStack() LifoStack {
+func New() Stack {
 	return &stack{
-		elements: make([]interface{}, 0, 0),
+		elements: make([]interface{}, 0),
 	}
 }
 
@@ -24,13 +28,18 @@ func (s *stack) Pop() (interface{}, error) {
 		return 0, errors.New("The stack is empty!")
 	}
 
+	s.lock.Lock()
 	res := s.elements[len-1]
 	s.elements = s.elements[:len-1]
+	s.lock.Unlock()
+
 	return res, nil
 }
 
-func (s *stack) Push(element interface{}) {
-	s.elements = append(s.elements, element)
+func (s *stack) Push(elementList ...interface{}) {
+	s.lock.Lock()
+	s.elements = append(s.elements, elementList...)
+	s.lock.Unlock()
 }
 
 func (s *stack) GetLength() int {

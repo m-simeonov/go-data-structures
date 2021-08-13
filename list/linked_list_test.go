@@ -1,14 +1,14 @@
-package structures_test
+package list_test
 
 import (
 	"github.com/stretchr/testify/assert"
-	"go-data-structures/structures"
+	"go-data-structures/list"
 	"testing"
 )
 
 func TestAddLinkedList(t *testing.T) {
 	t.Parallel()
-	list := structures.NewLinkedList()
+	list := list.New()
 
 	list.Add("one")
 	assert.Equal(t, list.GetLength(), 1)
@@ -35,7 +35,7 @@ func TestAddLinkedList(t *testing.T) {
 
 func TestDeleteHeadLinkedList(t *testing.T) {
 	t.Parallel()
-	list := structures.NewLinkedList()
+	list := list.New()
 	list.Add("one")
 	list.Add("two")
 	list.Add("three")
@@ -50,7 +50,7 @@ func TestDeleteHeadLinkedList(t *testing.T) {
 
 func TestDeleteElementLinkedList(t *testing.T) {
 	t.Parallel()
-	list := structures.NewLinkedList()
+	list := list.New()
 	list.Add("one")
 	list.Add("two")
 	list.Add("three")
@@ -65,7 +65,7 @@ func TestDeleteElementLinkedList(t *testing.T) {
 
 func TestDeleteTailLinkedList(t *testing.T) {
 	t.Parallel()
-	list := structures.NewLinkedList()
+	list := list.New()
 	list.Add("one")
 	list.Add("two")
 	list.Add("three")

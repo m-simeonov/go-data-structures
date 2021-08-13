@@ -1,14 +1,14 @@
-package structures_test
+package stack_test
 
 import (
 	"github.com/stretchr/testify/assert"
-	"go-data-structures/structures"
+	"go-data-structures/stack"
 	"testing"
 )
 
 func TestPushStack(t *testing.T) {
 	t.Parallel()
-	stack := structures.NewLifoStack()
+	stack := stack.New()
 	stack.Push("one")
 	stack.Push("two")
 
@@ -17,7 +17,7 @@ func TestPushStack(t *testing.T) {
 
 func TestPopStack(t *testing.T) {
 	t.Parallel()
-	stack := structures.NewLifoStack()
+	stack := stack.New()
 	stack.Push("one")
 	stack.Push("two")
 
@@ -28,10 +28,8 @@ func TestPopStack(t *testing.T) {
 
 func TestStackIntegration(t *testing.T) {
 	t.Parallel()
-	stack := structures.NewLifoStack()
-	stack.Push(1)
-	stack.Push(2)
-	stack.Push(3)
+	stack := stack.New()
+	stack.Push(1, 2, 3)
 
 	assert.Equal(t, stack.GetLength(), 3)
 
